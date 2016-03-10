@@ -3,8 +3,6 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
-	public GameObject currentCheckpoint;
-
 	private PlayerController player;
 
 	// Use this for initialization
@@ -16,5 +14,4 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
 	
 	}
-
 }
