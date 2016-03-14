@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
 	public Sprite left;
 	public Sprite right;
 
+	public Transform firePoint;
+	public GameObject ninjaStar;
+
 	// Use this for initialization
 	void Start () {
 		     
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.LeftArrow) && (grounded || grounded2)) {
+		if (Input.GetKeyDown (KeyCode.Comma) && (grounded || grounded2)) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpHeight);
 		}
 
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 		}
 
-		if (Input.GetKeyDown (KeyCode.RightArrow)) {
+		if (Input.GetKeyDown (KeyCode.Slash)) {
 			moveRight = !moveRight;
 			wallCheck.localPosition = -wallCheck.localPosition;
 			SetSprite ();
@@ -54,6 +57,10 @@ public class PlayerController : MonoBehaviour {
 			moveRight = !moveRight;
 			wallCheck.localPosition = -wallCheck.localPosition;
 			SetSprite ();
+		}
+
+		if (Input.GetKeyDown (KeyCode.Period)) {
+			Instantiate (ninjaStar, firePoint.position, firePoint.rotation);
 		}
 			
 	}

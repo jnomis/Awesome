@@ -34,7 +34,7 @@ public class PlayerController1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.LeftControl) && (grounded || grounded2)) {
+		if (Input.GetKeyDown (KeyCode.Z) && (grounded || grounded2)) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpHeight);
 		}
 
@@ -44,7 +44,7 @@ public class PlayerController1 : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed, GetComponent<Rigidbody2D> ().velocity.y);
 		}
 
-		if (Input.GetKeyDown (KeyCode.LeftCommand)) {
+		if (Input.GetKeyDown (KeyCode.C)) {
 			moveRight = !moveRight;
 			wallCheck.localPosition = -wallCheck.localPosition;
 			SetSprite ();
