@@ -12,16 +12,12 @@ public class NinjaStarController : MonoBehaviour {
 
 		player = FindObjectOfType<PlayerController>();
 
-		 
-			
-		}
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (speed, GetComponent<Rigidbody2D> ().velocity.y);
+	 	GetComponent<Rigidbody2D> ().velocity = new Vector2 (speed, GetComponent<Rigidbody2D> ().velocity.y);
 
 	}
 

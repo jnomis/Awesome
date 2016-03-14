@@ -66,7 +66,9 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void SetSprite() {
+		
 		SpriteRenderer renderer = GetComponent<SpriteRenderer> ();
+
 		renderer.sprite = moveRight ? right : left;
 
 	}
