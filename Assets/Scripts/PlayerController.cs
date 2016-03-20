@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour {
 	public Sprite right;
 
 	public Transform firePoint;
+	public Transform firePoint2;
 	public GameObject ninjaStar;
+	public GameObject ninjaStar2;
 
 	// Use this for initialization
 	void Start () {
@@ -60,7 +62,11 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Period)) {
-			Instantiate (ninjaStar, firePoint.position, firePoint.rotation);
+			if (moveRight) {
+				Instantiate (ninjaStar2, firePoint2.position, firePoint2.rotation);
+			} else {
+				Instantiate (ninjaStar, firePoint.position, firePoint.rotation);
+			}
 		}
 			
 	}

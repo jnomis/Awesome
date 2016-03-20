@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController1 : MonoBehaviour {
+public class PlayerController2 : MonoBehaviour {
 
 	public float moveSpeed;
 	public float jumpHeight;
@@ -17,6 +17,11 @@ public class PlayerController1 : MonoBehaviour {
 	private bool walled;
 	public Sprite left;
 	public Sprite right;
+
+	public Transform firePoint;
+	public Transform firePoint2;
+	public GameObject ninjaStar;
+	public GameObject ninjaStar2;
 
 	// Use this for initialization
 	void Start () {
@@ -54,6 +59,14 @@ public class PlayerController1 : MonoBehaviour {
 			moveRight = !moveRight;
 			wallCheck.localPosition = -wallCheck.localPosition;
 			SetSprite ();
+		}
+
+		if (Input.GetKeyDown (KeyCode.X)) {
+			if (moveRight) {
+				Instantiate (ninjaStar2, firePoint2.position, firePoint2.rotation);
+			} else {
+				Instantiate (ninjaStar, firePoint.position, firePoint.rotation);
+			}
 		}
 			
 	}
